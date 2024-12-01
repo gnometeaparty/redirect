@@ -20,6 +20,7 @@
 		"dev": "bun run --hot src/index.ts",
 		"start": "NODE_ENV=production bun run src/index.ts",
 		"clean": "rimraf node_modules dist .turbo",
+		"ci:version": "changeset version && pnpm format:fix",
 		"pre-commit-tasks": "turbo build type-check"
 	},
 	"dependencies": {

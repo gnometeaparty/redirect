@@ -1,0 +1,20 @@
+{
+	"$schema": "https://turbo.build/schema.json",
+	"globalDependencies": ["**/.env.*local"],
+	"tasks": {
+		"build": {
+			"env": ["NODE_ENV", "PORT", "DOMAIN", "REDIS_URL", "REDIS_TOKEN", "AUTHORIZED_DOMAINS", "NOT_FOUND_REDIRECT_URL"],
+			"outputs": ["dist/**"]
+		},
+		"dev": {
+			"env": ["NODE_ENV", "PORT", "DOMAIN", "REDIS_URL", "REDIS_TOKEN", "AUTHORIZED_DOMAINS", "NOT_FOUND_REDIRECT_URL"],
+			"cache": false
+		},
+		"type-check": {
+			"dependsOn": ["^build"]
+		},
+		"clean": {
+			"cache": false
+		}
+	}
+}

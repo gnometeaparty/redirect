@@ -1,0 +1,20 @@
+meta {
+  name: Delete alias
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/:id
+  body: none
+  auth: none
+}
+
+params:path {
+  id: F3bk84ENnT7R4qEUs5Bo9
+}
+
+headers {
+  Authorization: Bearer {{apiKey}}
+  X-Api-Version: v0
+}

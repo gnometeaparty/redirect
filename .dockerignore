@@ -1,0 +1,10 @@
+# Ignore everything.
+*
+*/
+
+# Allow these things.
+!package.json
+!pnpm-lock.yaml
+!tsconfig.json
+!turbo.json
+!src/

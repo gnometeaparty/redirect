@@ -1,0 +1,22 @@
+meta {
+  name: Alias URL
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/alias
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{apiKey}}
+  X-Api-Version: v0
+}
+
+body:json {
+  {
+    "url": "https://gnometeaparty.com"
+  }
+}

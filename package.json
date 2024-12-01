@@ -1,0 +1,54 @@
+{
+	"name": "redirect",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/gnometeaparty/redirect.git"
+	},
+	"homepage": "https://github.com/gnometeaparty/redirect#readme",
+	"scripts": {
+		"install:hooks": "lefthook install",
+		"commit": "commit",
+		"type-check": "tsc --noEmit",
+		"format:check": "biome check .",
+		"format:fix": "biome check . --write",
+		"format:fix-unsafe": "biome check . --write --unsafe",
+		"declutter": "knip --no-exit-code",
+		"build": "bun build --compile --sourcemap src/index.ts --outfile dist/index.js",
+		"dev": "bun run --hot src/index.ts",
+		"start": "NODE_ENV=production bun run src/index.ts",
+		"clean": "rimraf node_modules dist .turbo",
+		"pre-commit-tasks": "turbo build type-check"
+	},
+	"dependencies": {
+		"@gnometeaparty/hono-header-version": "^0.1.1",
+		"@hono-rate-limiter/redis": "^0.1.4",
+		"@hono/zod-validator": "^0.4.1",
+		"@t3-oss/env-core": "^0.11.1",
+		"@unkey/api": "^0.27.0",
+		"@upstash/redis": "^1.34.3",
+		"hono": "^4.6.12",
+		"hono-rate-limiter": "^0.4.0",
+		"nanoid": "^5.0.9",
+		"zod": "^3.23.8"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@changesets/cli": "2.27.9",
+		"@commitlint/cli": "19.5.0",
+		"@commitlint/config-conventional": "19.5.0",
+		"@commitlint/prompt-cli": "19.5.0",
+		"@commitlint/types": "19.5.0",
+		"@tsconfig/bun": "^1.0.7",
+		"@types/bun": "1.1.13",
+		"bun-types": "1.1.34",
+		"knip": "^5.38.2",
+		"lefthook": "^1.8.4",
+		"rimraf": "6.0.1",
+		"turbo": "^2.3.3",
+		"typescript": "5.6.2"
+	},
+	"packageManager": "pnpm@9.12.1"
+}
